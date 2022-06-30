@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Mochiy+Pop+P+One&family=Oswald:wght@300&family=Raleway:ital,wght@1,200&family=Rubik+Moonrocks&display=swap');
+body{
+    background-color: rgba(0, 0, 0, 0.921);
+}
+header, .alert{
+    z-index: 100;
+}
+.description{
+    height: 25px;
+    overflow: hidden;
+    transition: height .3s ease-in .3s;
+}
+.description:hover{
+    height: 80px;
+
+}
+.tituloPrincipal{
+    margin: auto;
+    text-align: center;
+    margin-top: 45px;
+    font-size: 120px;
+    font-family: 'Rubik Moonrocks', cursive;
+    color: #fefa25;
+    
+}
+.carrito{
+    min-height: 80vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+.table__productos{
+    display: flex;
+}
+.table__productos> img{
+    width: 9rem;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+.table__cantidad > input{
+    width: 40px;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+.hide{
+    display: none;
+}
