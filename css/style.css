@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Mochiy+Pop+P+One&family=Oswald:wght@300&family=Raleway:ital,wght@1,200&family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Mochiy+Pop+P+One&family=Oswald:wght@300&family=Raleway:ital,wght@1,200&family=Rubik+Moonrocks&display=swap');
 body{
     background-color: rgba(0, 0, 0, 0.921);
 }
@@ -49,4 +50,18 @@ header, .alert{
 }
 .hide{
     display: none;
+}
+#pagar{
+    background-color: #F3CA40;
+    color: #131200;
+    border-radius: 20%;
+    border-color: #131200;
+    transition: height .3s ease-in .3s;
+    font-family: 'Mochiy Pop P One', sans-serif;
+   
+    
+    
+}
+#pagar:hover{
+    height: 50px;
 }

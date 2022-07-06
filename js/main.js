@@ -1,6 +1,22 @@
 const Clickbutton= document.querySelectorAll("button")
 const tbody= document.querySelector(".tbody")
 let carrito= []
+const botonPagar= document.querySelector("#pagar")
+botonPagar.addEventListener("click",()=>{
+  Swal.fire({
+    title: 'PEDIDO CONFIRMADO, LO ENVIAREMOS PRONTO, ¡GRACIAS POR TU COMPRA!.',
+    width: 600,
+    padding: '3em',
+    color: '#4f494b',
+    background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+    backdrop: `
+    rgba(218, 156, 248, 0.8)
+      url("https://sweetalert2.github.io/images/nyan-cat.gif")
+      left top
+      no-repeat
+    `
+  })
+})
 
 Clickbutton.forEach(btn=> {
     btn.addEventListener("click",addToCarritoItem)
@@ -115,6 +131,7 @@ function CarritoTotal(){
           sumaInput.value < 1 ?  (sumaInput.value = 1) : sumaInput.value;
           item.cantidad = sumaInput.value;
           CarritoTotal()
+          
         }
       })
       
