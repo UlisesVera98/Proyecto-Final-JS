@@ -148,5 +148,16 @@ function CarritoTotal(){
               renderCarrito()
             }
     }
-  
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '955826767bmshc3d00c4ebd72f99p117b00jsn1666d81e8aee',
+        'X-RapidAPI-Host': 'burgers1.p.rapidapi.com'
+      }
+    };
+    
+    fetch('https://burgers1.p.rapidapi.com/burgers', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
   
