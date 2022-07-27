@@ -16,6 +16,10 @@ botonPagar.addEventListener("click",()=>{
       no-repeat
     `
   })
+  setTimeout(()=>{
+    window.location.reload(true);
+
+  }, 2700)
 })
 
 Clickbutton.forEach(btn=> {
@@ -30,7 +34,7 @@ function addToCarritoItem(e){
     const itemPrice= item.querySelector(".precio").textContent;
     const itemImg= item.querySelector(".card-img-top").src;
     
-    const newItem={
+    const newItem= {
         title: itemTitle,
         precio: itemPrice,
         img: itemImg,
@@ -49,12 +53,12 @@ function addItemCarrito(newItem){
   }, 2000)
     alert.classList.remove('hide')
     
-    const InputElmento= tbody.getElementsByClassName('input__elemento')
+    const InputElemnto= tbody.getElementsByClassName("input__elemento")
     for(let i =0; i < carrito.length ; i++){
         if(carrito[i].title.trim() === newItem.title.trim()){
           
           carrito[i].cantidad ++;
-          const inputValue = InputElmento[i]
+          const inputValue = InputElemnto[i]
           inputValue.value++;
           CarritoTotal()
             return null;
@@ -78,7 +82,7 @@ function renderCarrito(){
         </td>
         <td class="table__precio text-white"><p>${item.precio}</p></td>
         <td class="table__cantidad">
-            <input type="number" min="1" value=${item.cantidad} class='input__elemento'>
+            <input type="text" min="1" value=${item.cantidad} class="input__elemento">
             <button class="delete btn btn-danger">x</button>
         </td>
         
@@ -87,10 +91,11 @@ function renderCarrito(){
     tr.innerHTML= Content;
     tbody.append(tr)
     
+    tr.querySelector(".input__elemento").addEventListener("change", sumaCantidad)
     tr.querySelector(".delete").addEventListener("click", removeItemCarrito)
-    tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
+    
    
-    })
+    }) 
    CarritoTotal() 
 }
 
@@ -141,13 +146,13 @@ function CarritoTotal(){
             sessionStorage.setItem('carrito', JSON.stringify(carrito))
           }
           
-          window.onload = function(){
+          /*window.onload = function(){
             const storage = JSON.parse(sessionStorage.getItem('carrito'));
             if(storage){
               carrito = storage;
               renderCarrito()
             }
-    }
+    }*/
     const options = {
       method: 'GET',
       headers: {
